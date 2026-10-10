@@ -11,7 +11,7 @@
 
 > **Autonomous Workload Intelligence & Cognitive Capacity Optimization Platform**
 
-CognitivePulse Pro is a full-stack, enterprise control plane engineered to mitigate developer fatigue, prevent mental burnout, and dynamically schedule complex technical tasks. By processing biometric telemetry signals alongside task complexity metrics, CognitivePulse Pro uses **Integer Linear Programming (ILP)** via Google OR-Tools to assign high-demand tasks against real-time cognitive energy capacity curves ($E(t)$).
+CognitivePulse Pro is a full-stack enterprise control plane engineered to mitigate developer fatigue, prevent mental burnout, and dynamically schedule complex technical tasks. By processing biometric telemetry signals alongside task complexity metrics, CognitivePulse Pro uses **Integer Linear Programming (ILP)** via Google OR-Tools to assign high-demand tasks against real-time cognitive energy capacity curves ($E(t)$).
 
 ---
 
@@ -52,10 +52,12 @@ cognitivepulse_pro/
 │   └── src/
 │       ├── main.jsx          # React DOM mounting entry point
 │       └── App.jsx           # Enterprise Control Plane UI
-├── venv/                     # Python 3 virtual environment
 ├── run_all.py                # Dual-service orchestrator script
 ├── .gitignore                # Version control exclusions
 └── README.md                 # System documentation
+```
+
+---
 
 ## 🛠️ API Endpoint Reference
 
@@ -69,6 +71,7 @@ cognitivepulse_pro/
 | `GET` | `/api/v1/analytics/error-correlation` | Fetch predicted syntax exception spikes |
 | `POST` | `/api/v1/schedule/optimize` | Execute OR-Tools Branch-and-Bound solver |
 
+---
 
 ## 🚀 Getting Started
 
@@ -83,30 +86,48 @@ Ensure you have the following installed on your machine:
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/diljin463/cognitivepulse_pro.git](https://github.com/diljin463/cognitivepulse_pro.git)
+   git clone https://github.com/diljin463/cognitivepulse_pro.git
    cd cognitivepulse_pro
+   ```
 
-   1.Create and Activate Python Virtual Environment:
+2. **Create and Activate Python Virtual Environment:**
+   ```bash
    # On Windows CMD / Git Bash
-python -m venv venv
+   python -m venv venv
+   
+   # Activate on Git Bash:
+   source venv/Scripts/activate
+   
+   # Activate on Windows CMD:
+   # venv\Scripts\activate
+   ```
 
-# Activate on Git Bash:
-source venv/Scripts/activate
+3. **Install Backend Dependencies:**
+   ```bash
+   pip install fastapi uvicorn ortools pydantic
+   ```
 
-# Activate on Windows CMD:
-# venv\Scripts\activate
+4. **Install Frontend Dependencies:**
+   ```bash
+   cd frontend
+   npm install
+   cd ..
+   ```
 
-2.Install Backend Dependencies:
-pip install fastapi uvicorn ortools pydantic
+---
 
-3.Install Frontend Dependencies:
-cd frontend
-npm install
-cd ..
+## ⚡ Running the Stack
 
-⚡ Running the Stack
-To launch the backend API (http://127.0.0.1:8000) and the React dashboard (http://localhost:5173) simultaneously in a single terminal, run:
+To launch the backend API (`http://127.0.0.1:8000`) and the React dashboard (`http://localhost:5173`) simultaneously in a single terminal, run:
+
+```bash
 python run_all.py
+```
 
-Press Ctrl + C in your terminal to perform a graceful shutdown of both services.
+Press `Ctrl + C` in your terminal to perform a graceful shutdown of both services.
 
+---
+
+## 📜 License
+
+Distributed under the **MIT License**. See `LICENSE` for details.
