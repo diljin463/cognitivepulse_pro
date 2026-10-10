@@ -1,0 +1,31 @@
+# --- Backend Framework & Async Server ---
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+asyncio==3.4.3
+
+# --- Async Database & Storage ---
+sqlalchemy[asyncio]==2.0.31
+aiosqlite==0.20.0
+duckdb==1.0.0
+
+# --- Desktop Telemetry Capture ---
+pynput==1.7.7
+psutil==6.0.0
+pygetwindow==0.0.1; platform_system=="Windows"
+
+# --- Data Science & Analytics ---
+pandas==2.2.2
+numpy==1.26.4
+scipy==1.13.1
+
+# --- AI / Machine Learning & NLP ---
+sentence-transformers==3.0.1
+scikit-learn==1.5.0
+lightgbm==4.3.0
+
+# --- Operations Research & Optimization ---
+ortools==9.10.4067
+
+# --- Utilities ---
+pydantic==2.7.4
+requests==2.32.3
