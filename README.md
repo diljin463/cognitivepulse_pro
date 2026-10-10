@@ -56,3 +56,60 @@ cognitivepulse_pro/
 ├── run_all.py                # Dual-service orchestrator script
 ├── .gitignore                # Version control exclusions
 └── README.md                 # System documentation
+
+🛠️ API Endpoint Reference
+Method	Endpoint	Description
+GET	/	Health check & system status
+GET	/api/v1/tasks	Fetch active task backlog queue
+POST	/api/v1/tasks	Ingest new task vector
+DELETE	/api/v1/tasks/{id}	Permanently delete a specific task
+DELETE	/api/v1/tasks	Clear entire workload queue
+GET	/api/v1/analytics/error-correlation	Fetch predicted syntax exception spikes
+POST	/api/v1/schedule/optimize	Execute OR-Tools Branch-and-Bound solver
+
+
+🚀 Getting Started
+Prerequisites
+Ensure you have the following installed on your machine:
+
+Python 3.10+
+
+Node.js 18+ & npm
+
+Git
+
+Installation Steps
+Clone the repository:
+
+Bash
+git clone [https://github.com/diljin463/cognitivepulse_pro.git](https://github.com/diljin463/cognitivepulse_pro.git)
+cd cognitivepulse_pro
+Create and Activate Python Virtual Environment:
+
+Bash
+# On Windows CMD / Git Bash
+python -m venv venv
+
+# Activate on Git Bash:
+source venv/Scripts/activate
+
+# Activate on Windows CMD:
+# venv\Scripts\activate
+Install Backend Dependencies:
+
+Bash
+pip install fastapi uvicorn ortools pydantic
+Install Frontend Dependencies:
+
+Bash
+cd frontend
+npm install
+cd ..
+
+
+⚡ Running the Stack
+To launch the backend API (http://127.0.0.1:8000) and the React dashboard (http://localhost:5173) simultaneously in a single terminal, run:
+
+Bash
+python run_all.py
+
